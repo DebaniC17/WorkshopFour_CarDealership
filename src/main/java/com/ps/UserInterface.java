@@ -2,16 +2,18 @@ package com.ps;
 
 public class UserInterface {
 
-    //private static Dealership dealership;
+    private static Dealership dealership;
 
     public static void init() {
-        System.out.println("Init method");
+        dealership = DealershipFileManager.getDealership();
         //loading the dealership and inventory from a file
     }
 
    public static void display() {
        init();
-       System.out.println('load menu');
+       System.out.println(dealership.getAllVehicles());
+
+       System.out.println("load menu");
        //load the menu
    }
 }

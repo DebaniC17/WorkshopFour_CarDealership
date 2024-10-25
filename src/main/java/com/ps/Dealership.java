@@ -1,6 +1,7 @@
 package com.ps;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dealership {
     private String name;
@@ -8,21 +9,56 @@ public class Dealership {
     private String phone;
     private ArrayList<Vehicle> inventory;
 
-  //  static ArrayList<Vehicle> allVehicles = new ArrayList<>();
-
-
     public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;
         this.phone = phone;
+
+        this.inventory = new ArrayList<>();
     }
 
-    public String getPhone() {
-        return phone;
+    public List<Vehicle> getVehicleByPrice(double min, double max) {
+        return null;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public List<Vehicle> getVehicleByMakeModel(String make, String model) {
+        return null;
+    }
+
+    public List<Vehicle> getVehicleByYear(int minYear, int maxYear) {
+        return null;
+    }
+
+    public List<Vehicle> getVehicleByColor(String color) {
+        return null;
+    }
+
+    public List<Vehicle> getVehicleByMileage(int min, int max) {
+        return null;
+    }
+
+    public List<Vehicle> getVehicleByType(String type) {
+        return null;
+    }
+
+    public List<Vehicle> getAllVehicles() {
+        return this.inventory;
+    }
+
+    public void addVehicle(Vehicle vehicle) {
+        this.inventory.add(vehicle);
+    }
+
+    public void removeVehicle(Vehicle vehicle) {
+        this.inventory.remove(vehicle);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {
@@ -33,14 +69,11 @@ public class Dealership {
         this.address = address;
     }
 
-    public String getName() {
-        return name;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
-    
-
-
 }
