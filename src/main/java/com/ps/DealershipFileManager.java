@@ -7,12 +7,12 @@ import java.io.FileWriter;
 import java.util.List;
 
 public class DealershipFileManager {
-    public static Dealership getDealership() {
+    public Dealership getDealership() {
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("inventory.csv"));
 
-            String firstLine = BufferedReader.readLine();
+            String firstLine = bufferedReader.readLine();
             String[] splitDealership = firstLine.split("\\|");
             String name = splitDealership[0];
             String address = splitDealership[1];
@@ -50,7 +50,7 @@ public class DealershipFileManager {
         return null;
     }
 
-    public static void saveDealership(Dealership dealership) {
+    public void saveDealership(Dealership dealership) {
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("inventory.csv"));
 
