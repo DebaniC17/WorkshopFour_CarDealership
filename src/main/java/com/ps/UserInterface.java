@@ -105,21 +105,60 @@ public class UserInterface {
     }
 
     private static void processGetByPriceRequest() {
+        System.out.println("Enter minimum price:");
+        double minPrice = scanner.nextDouble();
+        System.out.println("Enter maximum price: ");
+        double maxPrice = scanner.nextDouble();
+
+        List<Vehicle> vehicles = dealership.getVehicleByPrice(minPrice, maxPrice);
+        displayVehicles(vehicles);
 
     }
     private static void processGetByMakeModelRequest() {
+        System.out.println("Enter make: ");
+        String make = scanner.next();
+        System.out.println(" Enter model: ");
+        String model = scanner.next();
+
+        List<Vehicle> vehicles = dealership.getVehicleByMakeModel(make, model);
+        displayVehicles(vehicles);
 
     }
     private static void processGetByYearRequest() {
+        System.out.println("Enter minimum year: ");
+        int minYear = scanner.nextInt();
+        System.out.println("Enter maximum year: ");
+        int maxYear = scanner.nextInt();
+
+        List<Vehicle> vehicles = dealership.getVehicleByYear(minYear, maxYear);
+        displayVehicles(vehicles);
 
     }
     private static void processGetByColorRequest() {
+        System.out.println("Enter color: ");
+        String color = scanner.next();
+
+        List<Vehicle> vehicles = dealership.getVehicleByColor(color);
+        displayVehicles(vehicles);
 
     }
     private static void processGetByMileageRequest() {
+        System.out.println("Enter minimum mileage: ");
+        int minMileage = scanner.nextInt();
+        System.out.println("Enter maximum mileage: ");
+        int maxMileage = scanner.nextInt();
+
+        List<Vehicle> vehicles = dealership.getVehicleByMileage(minMileage, maxMileage);
+        displayVehicles(vehicles);
 
     }
     private static void processGetByVehicleTypeRequest() {
+        System.out.println("Enter vehicle type: ");
+        String type = scanner.next();
+
+        List<Vehicle> vehicles = dealership.getVehicleByType(type);
+        displayVehicles(vehicles);
+
 
     }
     private static void processAddVehicleRequest() {

@@ -1,5 +1,6 @@
 package com.ps;
 
+import java.beans.PropertyEditorSupport;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,26 +19,63 @@ public class Dealership {
     }
 
     public List<Vehicle> getVehicleByPrice(double min, double max) {
-        return null;
+        List<Vehicle> result = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getPrice() >= min && vehicle.getPrice() <= max) {
+                result.add(vehicle);
+            }
+        }
+        return result;
     }
 
     public List<Vehicle> getVehicleByMakeModel(String make, String model) {
-        return null;
+        List<Vehicle> result = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)) {
+                result.add(vehicle);
+            }
+        }
+        return result;
     }
 
     public List<Vehicle> getVehicleByYear(int minYear, int maxYear) {
-        return null;
+        List<Vehicle> result = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getYear() >= minYear && vehicle.getYear() <= maxYear) {
+                result.add(vehicle);
+            }
+        }
+        return result;
     }
 
     public List<Vehicle> getVehicleByColor(String color) {
-        return null;
+        List<Vehicle> result = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getColor().equalsIgnoreCase(color)) {
+                result.add(vehicle);
+            }
+        }
+
+        return result;
     }
 
     public List<Vehicle> getVehicleByMileage(int min, int max) {
-        return null;
+        List<Vehicle> result = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getOdometer() >= min && vehicle.getOdometer() <= max) {
+                result.add(vehicle);
+            }
+        }
+        return result;
     }
 
     public List<Vehicle> getVehicleByType(String type) {
+        List<Vehicle> result = new ArrayList<>();
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getVehicleType().equalsIgnoreCase(type)) {
+                result.add(vehicle);
+            }
+        }
         return null;
     }
 
@@ -77,3 +115,4 @@ public class Dealership {
         this.phone = phone;
     }
 }
+
