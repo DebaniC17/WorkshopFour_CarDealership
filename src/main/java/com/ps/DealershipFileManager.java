@@ -65,10 +65,10 @@ public class DealershipFileManager {
                 String vehicleLine = String.format("%d|%d|%s|%s|%s|%s|%d|%.2f\n",
                         vehicle.getVin(),
                         vehicle.getYear(),
-                        vehicle.getMake(),
-                        vehicle.getModel(),
-                        vehicle.getVehicleType(),
-                        vehicle.getColor(),
+                        capitalize(vehicle.getMake()),
+                        capitalize(vehicle.getModel()),
+                        capitalize(vehicle.getVehicleType()),
+                        capitalize(vehicle.getColor()),
                         vehicle.getOdometer(),
                         vehicle.getPrice()
 
@@ -81,5 +81,11 @@ public class DealershipFileManager {
             exception.printStackTrace();
 
         }
+    }
+    private String capitalize(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+        return input.substring(0,1).toUpperCase() + input.substring(1).toLowerCase();
     }
 }
