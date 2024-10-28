@@ -90,12 +90,18 @@ public class Vehicle {
         return "Vehicle{" +
                 "vin=" + vin +
                 ", year=" + year +
-                ", make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", vehicleType='" + vehicleType + '\'' +
-                ", color='" + color + '\'' +
+                ", make='" + capitalize(make) + '\'' +
+                ", model='" + capitalize(model) + '\'' +
+                ", vehicleType='" + capitalize(vehicleType) + '\'' +
+                ", color='" + capitalize(color) + '\'' +
                 ", odometer=" + odometer +
                 ", price=" + price +
                 '}';
+    }
+    private String capitalize(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+        return input.substring(0,1).toUpperCase() + input.substring(1).toLowerCase();
     }
 }
